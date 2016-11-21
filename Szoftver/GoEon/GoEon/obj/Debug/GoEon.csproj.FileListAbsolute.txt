@@ -1,0 +1,12 @@
+F:\Programozás\Szakdoga\GoEon\GoEon\bin\Debug\GoEon.exe.config
+F:\Programozás\Szakdoga\GoEon\GoEon\bin\Debug\GoEon.exe
+F:\Programozás\Szakdoga\GoEon\GoEon\bin\Debug\GoEon.pdb
+F:\Programozás\Szakdoga\GoEon\GoEon\obj\Debug\GoEon.csprojResolveAssemblyReference.cache
+F:\Programozás\Szakdoga\GoEon\GoEon\obj\Debug\GoEon.Properties.Resources.resources
+F:\Programozás\Szakdoga\GoEon\GoEon\obj\Debug\GoEon.csproj.GenerateResource.Cache
+F:\Programozás\Szakdoga\GoEon\GoEon\obj\Debug\GoEon.exe
+F:\Programozás\Szakdoga\GoEon\GoEon\obj\Debug\GoEon.pdb
+F:\Programozás\Szakdoga\GoEon\GoEon\obj\Debug\GoEon.Fooldal.resources
+F:\Programozás\Szakdoga\GoEon\GoEon\bin\Debug\MySql.Data.dll
+F:\Programozás\Szakdoga\GoEon\GoEon\bin\Debug\MySql.Data.xml
+F:\Programozás\Szakdoga\GoEon\GoEon\obj\Debug\GoEon.Uj_feladat_felvetele.resources
