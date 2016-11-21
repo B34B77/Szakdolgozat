@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="28px" viewBox="0 0 32 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.1 (28215) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Landing---Uus" transform="translate(-296.000000, -806.000000)" stroke-width="1.2" stroke="#555A65">
+            <g id="group">
+                <g id="clients" transform="translate(0.000000, 780.000000)">
+                    <g id="fleet" transform="translate(296.000000, 20.000000)">
+                        <g id="Group" transform="translate(0.000000, 6.000000)">
+                            <polyline id="Stroke-1571" points="22 15.3125333 28 15.3125333 31.3333333 20.6458667 31.3333333 22.6458667 31.3333333 24.6325333 28 24.6325333"></polyline>
+                            <polyline id="Stroke-1572" points="14.6666667 24.6750667 22 24.6670667 22 11.3124 14.6666667 11.3124"></polyline>
+                            <polyline id="Stroke-1573" points="7.33333333 14.6458667 7.33333333 24.6752 10.6666667 24.6752"></polyline>
+                            <path d="M28,25.3333333 C28,26.4373333 27.1053333,27.3333333 26,27.3333333 C24.896,27.3333333 24,26.4373333 24,25.3333333 C24,24.228 24.896,23.3333333 26,23.3333333 C27.1053333,23.3333333 28,24.228 28,25.3333333 L28,25.3333333 Z" id="Stroke-1574"></path>
+                            <path d="M14.6666667,25.3333333 C14.6666667,26.4373333 13.772,27.3333333 12.6666667,27.3333333 C11.5626667,27.3333333 10.6666667,26.4373333 10.6666667,25.3333333 C10.6666667,24.228 11.5626667,23.3333333 12.6666667,23.3333333 C13.772,23.3333333 14.6666667,24.228 14.6666667,25.3333333 L14.6666667,25.3333333 Z" id="Stroke-1575"></path>
+                            <path d="M12.6666667,6.6524 C12.6666667,9.92306667 9.93733333,12.6524 6.66666667,12.6524 C3.396,12.6524 0.666666667,9.92306667 0.666666667,6.6524 C0.666666667,3.3804 3.396,0.6524 6.66666667,0.6524 C9.93733333,0.6524 12.6666667,3.3804 12.6666667,6.6524 L12.6666667,6.6524 Z" id="Stroke-1576"></path>
+                            <polyline id="Stroke-1577" stroke-linecap="round" points="6 3.31253333 6 7.31253333 8.66666667 7.31253333"></polyline>
+                            <path d="M0.666666667,17 L4.66666667,17.006" id="Stroke-1578" stroke-linecap="round"></path>
+                            <path d="M2.66666667,20 L4.66666667,20.006" id="Stroke-1579" stroke-linecap="round"></path>
+                            <path d="M4,22 L4.66666667,22.006" id="Stroke-1580" stroke-linecap="round"></path>
+                            <path d="M22,20 L30.916,20" id="Stroke-1581"></path>
+                            <path d="M21.9166667,24.7994667 L21.958,24.7568" id="Stroke-1582"></path>
+                            <path d="M22.0142667,24 L24.2222667,24" id="Stroke-1583"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

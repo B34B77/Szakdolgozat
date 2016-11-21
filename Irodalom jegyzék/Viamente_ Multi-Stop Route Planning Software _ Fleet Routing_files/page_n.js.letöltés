@@ -1,0 +1,20 @@
+function paginazione_tab(open_item){
+  var id_open = "#page_num_"+open_item;
+  var id_page = "#link_page_"+open_item;
+  
+  if ($.browser.msie && $.browser.version < 8.0) {
+    $("ul.post_page").hide();
+    $(id_open).show();
+  } else {
+    $("ul.post_page:visible").fadeOut(300, function(){
+      $(id_open).fadeIn(300);
+    });
+  }
+  $(".icon_paginazione").removeClass("icon_paginazione_on");
+  $(id_page).addClass("icon_paginazione_on");
+};
+
+$(document).ready(function(e) {
+  $("#tool_login").overlay();
+  $("#menu-item-190").click(function(){$("#tool_login").overlay().load();})
+});

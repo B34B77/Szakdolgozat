@@ -1,0 +1,39 @@
+$(document).ready(function(e) {
+  $('a.link_headhome').click(function(){
+    $('a.link_headhome').removeClass('on_view');
+    $(this).addClass('on_view');
+    var nome_div_view = $(this).attr('rel');
+    $('.contArticleGallery').hide(0, function(){});
+    var id_div_view = '#post-'+nome_div_view;
+    if ($(id_div_view).length) {
+      $(id_div_view).show(0);
+    } else {
+      $('#cont_gallery').append("<div id='post-"+nome_div_view+"' class='contArticleGallery'>"+cachedPosts[nome_div_view]+"</div>");
+    }
+  });
+  
+  $('a.title_menu').click(function(){
+    $('a.title_menu').removeClass('on');
+    $(this).addClass('on');
+    $('.cont_item_menu').children('.cate_menu').slideUp();
+    $(this).parent('.cont_item_menu').children('.cate_menu').slideDown();
+    var html_title = $(this).html();
+    var link_view = '#cat_'+html_title;
+    link_view = link_view.toLowerCase();
+    link_view = link_view.replace(' ', ''); link_view = link_view.replace(' ', '');
+    $(link_view+' a.link_headhome:first').click();
+    var html_val = $(link_view+' a.link_headhome:first').html();
+    var test_btn_apikey = $(this).html();
+    if (test_btn_apikey == 'API') { 
+      $('#api_key_freetrial').fadeIn(300);
+      $('.sign_up_home').addClass('sign_up_off');
+    };
+    if (test_btn_apikey != 'API') {
+      $('#api_key_freetrial').fadeOut(300);
+      $('.sign_up_home').removeClass('sign_up_off');
+    };
+    return;
+  });
+
+  $('a.title_menu:first').click();
+});

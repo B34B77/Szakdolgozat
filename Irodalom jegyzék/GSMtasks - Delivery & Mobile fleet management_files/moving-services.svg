@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="28px" viewBox="0 0 32 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1moving-services</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(1.000000, 1.000000)">
+            <polygon id="Fill-1" fill-opacity="0" fill="#000000" points="0 0 11 0 11 22 0 22"></polygon>
+            <polygon id="Stroke-3" stroke="#808AA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0 0 11 0 11 22 0 22"></polygon>
+            <polyline id="Fill-4" fill-opacity="0" fill="#000000" points="23 22 30 22 30 13 24 11 22 4 11 4"></polyline>
+            <polyline id="Stroke-5" stroke="#808AA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="23 22 30 22 30 13 24 11 22 4 11 4"></polyline>
+            <path d="M11,22 L15,22" id="Fill-6" fill-opacity="0" fill="#000000"></path>
+            <path d="M11,22 L15,22" id="Stroke-7" stroke="#808AA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M21.82843,19.171573 C23.39052,20.73367 23.39052,23.26633 21.82843,24.828427 C20.26633,26.390524 17.73367,26.390524 16.17157,24.828427 C14.60948,23.26633 14.60948,20.73367 16.17157,19.171573 C17.73367,17.60948 20.26633,17.60948 21.82843,19.171573" id="Fill-8" fill-opacity="0" fill="#000000"></path>
+            <path d="M21.82843,19.17157 C23.39052,20.73367 23.39052,23.26633 21.82843,24.82843 C20.26633,26.39052 17.73367,26.39052 16.17157,24.82843 C14.60948,23.26633 14.60948,20.73367 16.17157,19.17157 C17.73367,17.60948 20.26633,17.60948 21.82843,19.17157" id="Stroke-9" stroke="#808AA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <polyline id="Fill-10" fill-opacity="0" fill="#000000" points="16 8 16 11 20 11"></polyline>
+            <polyline id="Stroke-11" stroke="#808AA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="16 8 16 11 20 11"></polyline>
+        </g>
+    </g>
+</svg>

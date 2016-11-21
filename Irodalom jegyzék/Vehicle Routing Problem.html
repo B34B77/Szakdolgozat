@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://en.wikipedia.org/wiki/Vehicle_routing_problem -->
+<html class="client-js ve-not-available" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Vehicle routing problem - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Vehicle_routing_problem","wgTitle":"Vehicle routing problem","wgCurRevisionId":741301514,"wgRevisionId":741301514,"wgArticleId":7799668,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["CS1 errors: missing author or editor","CS1 errors: invisible characters","NP-complete problems","Operations research"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Vehicle_routing_problem","wgRelevantArticleId":7799668,"wgRequestId":"WDA5owpAADsAAYN7vjAAAACW","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgWikibaseItemId":"Q944041","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.math.styles":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.desktopArticleTarget.init","ext.uls.interface","ext.quicksurveys.init","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="./Vehicle Routing Problem_files/load.php">
+<script async="" src="./Vehicle Routing Problem_files/load(1).php"></script>
+<style>
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@-moz-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-moz-transform:translateY(-20px)}100%{opacity:1;-moz-transform:translateY(0)}}@-o-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-o-transform:translateY(-20px)}100%{opacity:1;-o-transform:translateY(0)}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;-moz-animation-name:centralAuthPPersonalAnimation;-o-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba( 255,255,255,0.5 );border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/w/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:#000;text-shadow:0 0.0625em 0 #fff;text-decoration:none;opacity:0.2;filter:alpha( opacity=20 )}.postedit-close:hover{color:#000;text-decoration:none;opacity:0.4;filter:alpha( opacity=40 )}
+.uls-menu{border-radius:4px; font-size:medium}.uls-search,.uls-language-settings-close-block{border-top-right-radius:4px;border-top-left-radius:4px}.uls-language-list{border-bottom-right-radius:4px;border-bottom-left-radius:4px}.uls-menu.callout .caret-before,.uls-menu.callout .caret-after{border-top:10px solid transparent;border-right:10px solid #c9c9c9;border-bottom:10px solid transparent;display:inline-block;left:-11px; top:17px;position:absolute}.uls-menu.callout .caret-after{border-right:10px solid #fcfcfc;display:inline-block;left:-10px}.uls-menu.callout--languageselection .caret-after{border-right:10px solid #fff}.uls-ui-languages button{margin:5px 15px 5px 0;white-space:nowrap;overflow:hidden}.uls-search-wrapper-wrapper{position:relative;padding-left:40px;margin-top:5px;margin-bottom:5px}.uls-icon-back{background:transparent url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.png?90e9b) no-repeat scroll center center;background-image:-webkit-linear-gradient( transparent,transparent ),url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?ae714);background-image:linear-gradient( transparent,transparent ),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20id%3D%22Layer_1%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M7%2013.1l8.9%208.9c.8-.8.8-2%200-2.8l-6.1-6.1%206-6.1c.8-.8.8-2%200-2.8L7%2013.1z%22%20id%3D%22path3%22%20fill%3D%22%23555%22%2F%3E%0A%3C%2Fsvg%3E%0A);background-size:28px;background-position:center center;height:32px;width:40px;display:block;position:absolute;left:0;border-right:1px solid #c9c9c9;opacity:0.8}.uls-icon-back:hover{opacity:1;cursor:pointer}
+.ext-quick-survey-panel,.ext-qs-loader-bar{width:auto;background-color:#eeeeee} .ext-qs-loader-bar{display:block;height:100px;margin-left:1.4em;clear:right;float:right;background-color:#eeeeee}.ext-qs-loader-bar.mw-ajax-loader{top:0}@media all and (min-width:720px){.ext-qs-loader-bar,.ext-quick-survey-panel{margin-left:1.4em;width:300px;clear:right;float:right}}</style><style>
+.ve-activated #toc,.ve-activated #siteNotice,.ve-activated .mw-indicators,.ve-activated #t-print,.ve-activated #t-permalink,.ve-activated #p-coll-print_export,.ve-activated #t-cite,.ve-deactivating .ve-ui-surface,.ve-active .ve-init-mw-desktopArticleTarget-editableContent{display:none} .ve-activating .ve-ui-surface{height:0;padding:0 !important; overflow:hidden} .ve-loading #content > :not( .ve-init-mw-desktopArticleTarget-loading-overlay ), .ve-activated .ve-init-mw-desktopArticleTarget-uneditableContent{  pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none; opacity:0.5}.ve-activated .catlinks{cursor:pointer}.ve-activated .catlinks a{opacity:1} .ve-activated #content{position:relative} .ve-init-mw-desktopArticleTarget-loading-overlay{position:absolute;left:0;right:0;z-index:1;margin-top:-0.5em}.ve-init-mw-desktopArticleTarget-progress{height:1em;overflow:hidden;margin:0 25%}.ve-init-mw-desktopArticleTarget-progress-bar{height:1em;width:0} .mw-editsection{white-space:nowrap; unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection-divider{color:#555} .ve-init-mw-desktopArticleTarget-progress{height:0.75em;border:1px solid #36c;background:#fff;border-radius:2px;box-shadow:0 0.1em 0 0 rgba( 0,0,0,0.15 )}.ve-init-mw-desktopArticleTarget-progress-bar{height:0.75em;background:#36c}
+#uls-settings-block{border-top:1px solid #c9c9c9;background:#f8f8f8;background:-webkit-gradient( linear,left top,left bottom,from( #fbfbfb ),to( #f0f0f0 ) );background:-webkit-linear-gradient( top,#fbfbfb,#f0f0f0 );background:-moz-linear-gradient( top,#fbfbfb,#f0f0f0 );background:-o-linear-gradient( top,#fbfbfb,#f0f0f0 );background:linear-gradient( #fbfbfb,#f0f0f0 );padding-left:10px;line-height:1.2em;border-radius:0 0 5px 5px}#uls-settings-block div.display-settings-block,#uls-settings-block div.input-settings-block{display:inline-block;margin:8px 15px;color:#565656}#uls-settings-block div.display-settings-block:hover,#uls-settings-block div.input-settings-block:hover{color:#252525}
+.cite-accessibility-label{ top:-99999px;clip:rect( 1px 1px 1px 1px ); clip:rect( 1px,1px,1px,1px ); position:absolute !important;padding:0 !important;border:0 !important;height:1px !important;width:1px !important; overflow:hidden}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0}.suggestions-result{color:#000;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4c59a6;color:#fff}.suggestions-special .special-label{color:#808080;text-align:left}.suggestions-special .special-query{color:#000;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:#c0c0c0}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:#fff}.highlight{font-weight:bold}
+.wp-teahouse-question-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}#wp-th-question-ask{float:right}.wp-teahouse-ask a.external{background-image:none !important}.wp-teahouse-respond-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}.wp-th-respond{float:right}.wp-teahouse-respond a.external{background-image:none !important}
+.referencetooltip{position:absolute;list-style:none;list-style-image:none;opacity:0;font-size:10px;margin:0;z-index:5;padding:0}.referencetooltip li{border:#080086 2px solid;max-width:260px;padding:10px 8px 13px 8px;margin:0px;background-color:#F7F7F7;-webkit-box-shadow:2px 4px 2px rgba(0,0,0,0.3);-moz-box-shadow:2px 4px 2px rgba(0,0,0,0.3);box-shadow:2px 4px 2px rgba(0,0,0,0.3)}.referencetooltip li+li{margin-left:7px;margin-top:-2px;border:0;padding:0;height:3px;width:0px;background-color:transparent;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;border-top:12px #080086 solid;border-right:7px transparent solid;border-left:7px transparent solid}.referencetooltip>li+li::after{content:'';border-top:8px #F7F7F7 solid;border-right:5px transparent solid;border-left:5px transparent solid;margin-top:-12px;margin-left:-5px;z-index:1;height:0px;width:0px;display:block}.client-js body .referencetooltip li li{border:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;height:auto;width:auto;margin:auto;padding:0;position:static}.RTflipped{padding-top:13px}.referencetooltip.RTflipped li+li{position:absolute;top:2px;border-top:0;border-bottom:12px #080086 solid}.referencetooltip.RTflipped li+li::after{border-top:0;border-bottom:8px #F7F7F7 solid;position:absolute;margin-top:7px}.RTsettings{float:right;height:24px;width:24px;cursor:pointer;background-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Gear_icon.svg/24px-Gear_icon.svg.png);background-image:linear-gradient(transparent,transparent),url(//upload.wikimedia.org/wikipedia/commons/7/77/Gear_icon.svg);margin-top:-9px;margin-right:-7px;-webkit-transition:opacity 0.15s;-moz-transition:opacity 0.15s;-ms-transition:opacity 0.15s;-o-transition:opacity 0.15s;transition:opacity 0.15s;opacity:0.6;filter:alpha(opacity=60)}.RTsettings:hover{opacity:1;filter:alpha(opacity=100)}.RTTarget{border:#080086 2px solid}
+.skin-vector li.GA,.skin-monobook li.GA,.skin-modern li.GA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/4/42/Monobook-bullet-ga.png)} .skin-vector li.FA,.skin-monobook li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/d/d4/Monobook-bullet-star.png)}.skin-modern li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Modern-bullet-star.svg/9px-Modern-bullet-star.svg.png)}
+.mw-ui-button{font-family:inherit;font-size:1em;display:inline-block;min-width:4em;max-width:28.75em;padding:.5em 1em;margin:0;border-radius:2px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;*display:inline;zoom:1;vertical-align:middle;background-color:#f8f9fa;color:#222222;border:1px solid #a2a9b1;text-align:center;font-weight:bold;cursor:pointer}.mw-ui-button:visited{color:#222222}.mw-ui-button:hover{background-color:#ffffff;color:#444444;border-color:#a2a9b1}.mw-ui-button:focus{background-color:#ffffff;color:#222222;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button:active,.mw-ui-button.is-on,.mw-ui-button.mw-ui-checked{background-color:#d9d9d9;color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button:disabled:hover,.mw-ui-button:disabled:active{background-color:#c8ccd1;color:#fff;box-shadow:none;border-color:#c8ccd1}.mw-ui-button:focus{outline-width:0}.mw-ui-button:focus::-moz-focus-inner{border-color:transparent;padding:0}.mw-ui-button:not( :disabled ){-webkit-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;-moz-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms}.mw-ui-button:disabled{text-shadow:none;cursor:default}.mw-ui-button.mw-ui-big{font-size:1.3em}.mw-ui-button.mw-ui-block{display:block;width:100%;margin-left:auto;margin-right:auto}.mw-ui-button.mw-ui-progressive,.mw-ui-button.mw-ui-constructive{background-color:#3366cc;color:#fff;border:1px solid #3366cc;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-progressive:hover,.mw-ui-button.mw-ui-constructive:hover{background-color:#447ff5;border-color:#447ff5}.mw-ui-button.mw-ui-progressive:focus,.mw-ui-button.mw-ui-constructive:focus{box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-progressive:active,.mw-ui-button.mw-ui-constructive:active,.mw-ui-button.mw-ui-progressive.is-on,.mw-ui-button.mw-ui-constructive.is-on,.mw-ui-button.mw-ui-progressive.mw-ui-checked,.mw-ui-button.mw-ui-constructive.mw-ui-checked{background-color:#2a4b8d;border-color:#2a4b8d;box-shadow:none}.mw-ui-button.mw-ui-progressive:disabled,.mw-ui-button.mw-ui-constructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-constructive:disabled:hover,.mw-ui-button.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-constructive:disabled:active,.mw-ui-button.mw-ui-progressive:disabled.mw-ui-checked,.mw-ui-button.mw-ui-constructive:disabled.mw-ui-checked{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-constructive.mw-ui-quiet{color:#222222}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:hover{background-color:transparent;color:#447ff5}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:active,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-progressive.mw-ui-quiet.mw-ui-checked,.mw-ui-button.mw-ui-constructive.mw-ui-quiet.mw-ui-checked{color:#2a4b8d}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:focus{background-color:transparent;color:#3366cc}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-destructive{background-color:#cc3333;color:#fff;border:1px solid #cc3333;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-destructive:hover{background-color:#e53939;border-color:#e53939}.mw-ui-button.mw-ui-destructive:focus{box-shadow:inset 0 0 0 1px #cc3333,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-destructive:active,.mw-ui-button.mw-ui-destructive.is-on,.mw-ui-button.mw-ui-destructive.mw-ui-checked{background-color:#873636;border-color:#873636;box-shadow:none}.mw-ui-button.mw-ui-destructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-destructive:disabled:active,.mw-ui-button.mw-ui-destructive:disabled.mw-ui-checked{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-destructive.mw-ui-quiet{color:#222222}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover{background-color:transparent;color:#e53939}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-destructive.mw-ui-quiet.mw-ui-checked{color:#873636}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus{background-color:transparent;color:#cc3333}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-quiet{background:transparent;border:0;text-shadow:none;color:#222222}.mw-ui-button.mw-ui-quiet:hover{background-color:transparent;color:#444444}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-checked{color:#000000}.mw-ui-button.mw-ui-quiet:focus{background-color:transparent;color:#222222}.mw-ui-button.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet:focus{box-shadow:none}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet:disabled{background:transparent}a.mw-ui-button{text-decoration:none;line-height:normal}a.mw-ui-button:hover,a.mw-ui-button:focus{text-decoration:none}.mw-ui-button-group > *{min-width:48px;border-radius:0;float:left}.mw-ui-button-group > *:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.mw-ui-button-group > *:not( :first-child ){border-left:0}.mw-ui-button-group > *:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px}.mw-ui-button-group .is-on .button{cursor:default}
+.mw-ui-icon{position:relative;line-height:1.5em;min-height:1.5em;min-width:1.5em}.mw-ui-icon.mw-ui-icon-element{text-indent:-999px;overflow:hidden;width:3.5em;min-width:3.5em;max-width:3.5em}.mw-ui-icon.mw-ui-icon-element:before{left:0;right:0;position:absolute;margin:0 1em}.mw-ui-icon.mw-ui-icon-before:before,.mw-ui-icon.mw-ui-icon-element:before{background-position:50% 50%;background-repeat:no-repeat;background-size:100% auto;float:left;display:block;min-height:1.5em;content:''}.mw-ui-icon.mw-ui-icon-before:before{position:relative;width:1.5em;margin-right:1em}.mw-ui-icon.mw-ui-icon-small:before{background-size:66.67% auto}
+@media print{#centralNotice{display:none}}.cn-closeButton{display:inline-block;zoom:1;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAACeklEQVR4Aa1UM3jkcRBN6qS//tTFttPHqmI359VZ5dm2L1zFtr02YlRx5sX2ft/7ed7O/w1M5ufnt8NZQjCBQXhG+IYZe5zjfju7xcHc3NzEzMwM6xOEqNnZ2ZeVlZW827dv1ycmJnbGx8d3Yr5582Z9eXk5D/d4h/empqYm+K0nw3yKcF4sFmdzOJzGgIAAhb29vc7Ozk6/Atrr/fz8lCwWq6m3tzcb72G3nmzFo/NNTU354eHhIltbW72Tk5M2IyND9P79+8ZPnz7VvXnzpoHBYPS4uLhobGxsDMHBwaLa2tp82MF+PVmUUqnMioiI6LOysjLQLCcPS2ZmZn7Ozc39oPtFYG80GgWpqakSS0tLY1hYmEgikWTBfoXsLD16BT3gUWhoqEKtVheREZ+Qu0IEjI+PZ2k0GqFer+cnJSWJra2tDWw2u2FqauoVeEAW3NzcnBcYGCh3dHTUtba2ltNjLvRJSEiQEQEPRENDQzkMBqPXwsKiXyqVFsFDNzc3LWmoqKmp4YIHZIyHDx9WOzg46GJiYmTk5e/h4eHstLQ0CX2ykXST4JPJ8y7sSVM5/QGMf9y4caMHf3r//v1a8IDsGRm04/D58+dtpNFPPNRqtflXrlzpI8G15IEGc2xsrFSlUglwD+Tk5NRBmuTk5A7wgOxbXFxcF8iysrIa1mskEolKvL29Ne7u7mpXV1dNaWlp9fr7X79+VYMMeQieY/dsv5p1r2g2Nja2vWZ7RXNiYuIA0dwlzwYGBjbkGXmURXeLeUa1ul2ebV8BEH+7CiAiASTYvgJ2qc3MzMzF2vz8+XPd27dvG5hMZg+CsV1tHmfXOP5+dqyddgHOI7v1srTdcwAAAABJRU5ErkJggg==);background:url(/w/extensions/CentralNotice/resources/subscribing/CloseWindow19x19.png?7596b)!ie;width:19px;height:19px;text-indent:19px;white-space:nowrap;overflow:hidden}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:#000;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:#fff}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+.mw-mmv-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;background-color:#000000}body.mw-mmv-lightbox-open{overflow-y:auto;  }body.mw-mmv-lightbox-open #mw-page-base,body.mw-mmv-lightbox-open #mw-head-base,body.mw-mmv-lightbox-open #mw-navigation,body.mw-mmv-lightbox-open #content,body.mw-mmv-lightbox-open #footer,body.mw-mmv-lightbox-open #globalWrapper{ display:none}body.mw-mmv-lightbox-open > *{ display:none}body.mw-mmv-lightbox-open > .mw-mmv-overlay,body.mw-mmv-lightbox-open > .mw-mmv-wrapper{display:block}.mw-mmv-filepage-buttons{margin-top:5px}.mw-mmv-filepage-buttons .mw-mmv-view-expanded,.mw-mmv-filepage-buttons .mw-mmv-view-config{display:block;line-height:inherit}.mw-mmv-filepage-buttons .mw-mmv-view-expanded.mw-ui-icon:before{background-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%20768%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22%23777%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M851.2%2071.6L690.7%20232.1l-40.1-40.3-9.6%20164.8%20164.8-9.3-40.3-40.4L926%20146.4l58.5%2058.5L997.6%200%20792.7%2013.1%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M769.6%2089.3H611.9l70.9%2070.8%207.9%207.5m-47.1%20234.6l-51.2%203%203-51.2%209.4-164.4%205.8-100.3H26.4V768h883.1V387l-100.9%205.8-165%209.4zM813.9%20678H113.6l207.2-270.2%2031.5-12.9L548%20599.8l105.9-63.2%20159.8%20140.8.2.6zm95.6-291.9V228l-79.1%2078.9%207.8%207.9%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A);background-image:url(/w/extensions/MultimediaViewer/resources/mmv/img/expand.svg?b714e)!ie}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before{background-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%20768%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M897%20454.6V313.4L810.4%20299c-6.4-23.3-16-45.7-27.3-65.8l50.5-71.4-99.4-100.2-71.4%2050.5c-20.9-11.2-42.5-20.9-65.8-27.3L582.6-1H441.4L427%2085.6c-23.3%206.4-45.7%2016-65.8%2027.3l-71.4-50.5-100.3%2099.5%2050.5%2071.4c-11.2%2020.9-20.9%2042.5-27.3%2066.6L127%20313.4v141.2l85.8%2014.4c6.4%2023.3%2016%2045.7%2027.3%2066.6L189.6%20607l99.5%2099.5%2071.4-50.5c20.9%2011.2%2042.5%2020.9%2066.6%2027.3l14.4%2085.8h141.2l14.4-86.6c23.3-6.4%2045.7-16%2065.8-27.3l71.4%2050.5%2099.5-99.5-50.5-71.4c11.2-20.9%2020.9-42.5%2027.3-66.6l86.4-13.6zm-385%2077c-81.8%200-147.6-66.6-147.6-147.6%200-81.8%2066.6-147.6%20147.6-147.6S659.6%20302.2%20659.6%20384%20593.8%20531.6%20512%20531.6z%22%20fill%3D%22%23777%22%2F%3E%0A%3C%2Fsvg%3E%0A);background-image:url(/w/extensions/MultimediaViewer/resources/mmv/img/gear_gray.svg?330ae)!ie;opacity:0.75}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before:hover{opacity:1}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./Vehicle Routing Problem_files/load(2).php">
+<meta name="generator" content="MediaWiki 1.29.0-wmf.3">
+<meta name="referrer" content="origin-when-cross-origin">
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Vehicle_routing_problem">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit">
+<link rel="edit" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit">
+<link rel="apple-touch-icon" href="https://en.wikipedia.org/static/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="https://en.wikipedia.org/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.wikipedia.org/w/api.php?action=rsd">
+<link rel="copyright" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Vehicle_routing_problem">
+<link rel="dns-prefetch" href="https://login.wikimedia.org/">
+<link rel="dns-prefetch" href="https://meta.wikimedia.org/">
+<script src="./Vehicle Routing Problem_files/load(3).php"></script></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Vehicle_routing_problem rootpage-Vehicle_routing_problem skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><div id="centralNotice" class="cn-WAM2016_en"><style type="text/css">
+#cn-toggle-box {
+  float: right;
+}
+#wam-banner {
+  background: #fff;
+  -moz-box-shadow:  0px 1px 3px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow:  0px 1px 3px rgba(0, 0, 0, 0.35);
+  box-shadow:  0px 1px 3px rgba(0, 0, 0, 0.35);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  padding: .75em;
+  margin-bottom: 0.5em;
+  border: 2px solid #D47E2B;
+  height: 60px;
+  overflow:hidden;
+  position: relative;
+  text-align: center;
+}
+#wam-banner-image {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  margin-top: -21px;
+}
+#wam-banner-mainlink {
+  font-weight: bold;
+}
+#wam-banner-text {
+  margin-top: 17px;
+  margin-left: 212px;
+  font-size: 150%;
+}
+@media screen and (max-width: 767px) {
+  #wam-banner-image {
+    display: none;
+  }
+  #wam-banner-text {
+    margin-left: 0;
+    margin-top: 0;
+    font-size: 120%;
+  }
+}
+</style>
+
+<div id="wam-banner" class="plainlinks">
+  <div id="cn-toggle-box">
+    <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#" title="Hide" onclick="mw.centralNotice.hideBanner();return false;">
+      <img border="0" src="./Vehicle Routing Problem_files/CloseWindow19x19.png" alt="Hide">
+    </a>
+  </div>
+  <a id="wam-banner-image-link" href="https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_Asian_Month">
+    <img id="wam-banner-image" src="./Vehicle Routing Problem_files/200px-WAM_2016_Banner.png">
+  </a>
+  <div id="wam-banner-text">
+    <span id="wam-banner-text-general">This November is the Wikipedia Asian Month.</span> 
+    <a id="wam-banner-mainlink" href="https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_Asian_Month"> Come join us.</a>
+  </div> 
+</div></div><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Vehicle routing problem</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#mw-head">navigation</a>, 					<a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="thumb tright">
+<div class="thumbinner" style="width:242px;"><a href="https://en.wikipedia.org/wiki/File:Figure_illustrating_the_vehicle_routing_problem.png" class="image"><img alt="" src="./Vehicle Routing Problem_files/240px-Figure_illustrating_the_vehicle_routing_problem.png" width="240" height="159" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Figure_illustrating_the_vehicle_routing_problem.png/360px-Figure_illustrating_the_vehicle_routing_problem.png 1.5x, //upload.wikimedia.org/wikipedia/commons/2/2b/Figure_illustrating_the_vehicle_routing_problem.png 2x" data-file-width="448" data-file-height="297"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="https://en.wikipedia.org/wiki/File:Figure_illustrating_the_vehicle_routing_problem.png" class="internal" title="Enlarge"></a></div>
+A figure illustrating the vehicle routing problem</div>
+</div>
+</div>
+<p>The <b>vehicle routing problem (VRP)</b> is a <a href="https://en.wikipedia.org/wiki/Combinatorial_optimization" title="Combinatorial optimization">combinatorial optimization</a> and <a href="https://en.wikipedia.org/wiki/Integer_programming" title="Integer programming">integer programming</a> problem which asks "What is the optimal set of routes for a fleet of vehicles to traverse in order to deliver to a given set of customers?". It generalises the well-known <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem" title="Travelling salesman problem">travelling salesman problem</a> (TSP). It first appeared in a paper by <a href="https://en.wikipedia.org/wiki/George_Dantzig" title="George Dantzig">George Dantzig</a> and John Ramser in 1959,<sup id="cite_ref-DantzigRamser1959_1-0" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-DantzigRamser1959-1">[1]</a></sup> in which first algorithmic approach was written and was applied to petrol deliveries. Often, the context is that of delivering goods located at a central depot to customers who have placed orders for such goods. The objective of the VRP is to minimize the total route cost. In 1964, Clarke and Wright improved on Dantzig and Ramser's approach using an effective greedy approach called the savings algorithm.</p>
+<p>Determining the optimal solution is an <a href="https://en.wikipedia.org/wiki/NP-hard" class="mw-redirect" title="NP-hard">NP-hard</a><sup id="cite_ref-toth_2-0" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-toth-2">[2]</a></sup> problem in <a href="https://en.wikipedia.org/wiki/Combinatorial_optimization" title="Combinatorial optimization">combinatorial optimization</a>, so the size of problems that can be solved optimally is limited. The commercial solvers therefore tend to use heuristics due to the size &amp; frequency of real world VRPs they need to solve.</p>
+<p>The VRP has many obvious applications in industry. In fact the use of computer optimization programs can give savings of 5% to a company <sup id="cite_ref-Springer_Verlag_3-0" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-Springer_Verlag-3">[3]</a></sup> as transportation is usually a significant component of the cost of a product (10%) <sup id="cite_ref-4" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-4">[4]</a></sup> - indeed the transportation sector makes up 10% of the <a href="https://en.wikipedia.org/wiki/European_Union" title="European Union">EU's</a> <a href="https://en.wikipedia.org/wiki/Gross_domestic_product" title="Gross domestic product">GDP</a>. Consequently, any savings created by the VRP, even less than 5%, are significant.<sup id="cite_ref-Springer_Verlag_3-1" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-Springer_Verlag-3">[3]</a></sup></p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+<span class="toctoggle">&nbsp;[<a role="button" tabindex="0" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#Setting_up_the_problem"><span class="tocnumber">1</span> <span class="toctext">Setting up the problem</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#VRP_variants"><span class="tocnumber">2</span> <span class="toctext">VRP variants</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#Exact_solution_methods"><span class="tocnumber">3</span> <span class="toctext">Exact solution methods</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#Vehicle_flow_formulations"><span class="tocnumber">3.1</span> <span class="toctext">Vehicle flow formulations</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#Manual_vs._Automatic_Optimum_Routing"><span class="tocnumber">3.2</span> <span class="toctext">Manual vs. Automatic Optimum Routing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#Free_software_for_solving_VRP"><span class="tocnumber">4</span> <span class="toctext">Free software for solving VRP</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#Further_reading"><span class="tocnumber">7</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#External_links"><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Setting_up_the_problem">Setting up the problem</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit&amp;section=1" title="Edit section: Setting up the problem">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The VRP concerns the service of a delivery company. How things are delivered from one or more <i>depots</i> which has a given set of home <i>vehicles</i> and operated by a set of <i>drivers</i> who can move on a given <i>road network</i> to a set of <i>customers</i>. It asks for a determination of a set of <i>routes</i>, <i>S</i>, (one route for each vehicle that must start and finish at its own depot) such that all customers' requirements and operational constraints are satisfied and the <i>global transportation cost</i> is minimized. This cost may be monetary, distance or otherwise.<sup id="cite_ref-toth_2-1" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-toth-2">[2]</a></sup></p>
+<p>The road network can be described using a <a href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)" title="Graph (discrete mathematics)">graph</a> where the <a href="https://en.wikipedia.org/wiki/Directed_edge" class="mw-redirect" title="Directed edge">arcs</a> are roads and vertices are junctions between them. The arcs may be directed or undirected due to the possible presence of one way streets or different costs in each direction. Each arc has an associated cost which is generally its length or travel time which may be dependent on vehicle type.<sup id="cite_ref-toth_2-2" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-toth-2">[2]</a></sup></p>
+<p>To know the global cost of each route, the travel cost and the travel time between each customer and the depot must be known. To do this our original graph is transformed into one where the vertices are the customers and depot and the arcs are the roads between them. The cost on each arc is the lowest cost between the two points on the original road network. This is easy to do as <a href="https://en.wikipedia.org/wiki/Shortest_path_problems" class="mw-redirect" title="Shortest path problems">shortest path problems</a> are relatively easy to solve. This transforms the sparse original graph into a <a href="https://en.wikipedia.org/wiki/Complete_graph" title="Complete graph">complete graph</a>. For each pair of vertices <i>i</i> and <i>j</i>, there exists an arc <i>(i,j)</i> of the complete graph whose cost is written as <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>C</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mi>j</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle C_{ij}}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/70b3f8ea18a9b9a0dbe09dae212a623820b217d7" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:3.164ex; height:2.843ex;" alt="C_{ij}"></span> and is defined to be the cost of shortest path from <i>i</i> to <i>j</i>. The travel time <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>t</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mi>j</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle t_{ij}}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/fac4d83b980aeee694196ea954d449e2db972135" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:2.342ex; height:2.676ex;" alt="t_{{ij}}"></span> is the sum of the travel times of the arcs on the shortest path from <i>i</i> to <i>j</i> on the original road graph.</p>
+<p>Sometimes it is impossible to satisfy all of a customer's demands and in such cases solvers may reduce some customers' demands or leave some customers unserved. To deal with these situations a priority variable for each customer can be introduced or associated penalties for the partial or lack of service for each customer given <sup id="cite_ref-toth_2-3" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-toth-2">[2]</a></sup></p>
+<p>The objective function of a VRP can be very different depending on the particular application of the result but a few of the more common objectives are:<sup id="cite_ref-toth_2-4" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-toth-2">[2]</a></sup></p>
+<ul>
+<li>Minimize the global transportation cost based on the global distance travelled as well as the fixed costs associated with the used vehicles and drivers</li>
+<li>Minimize the number of vehicles needed to serve all customers</li>
+<li>Least variation in travel time and vehicle load</li>
+<li>Minimize penalties for low quality service</li>
+</ul>
+<h2><span class="mw-headline" id="VRP_variants">VRP variants</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit&amp;section=2" title="Edit section: VRP variants">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:392px;"><a href="https://en.wikipedia.org/wiki/File:Map_of_vrp_subproblems.jpg" class="image"><img alt="" src="./Vehicle Routing Problem_files/390px-Map_of_vrp_subproblems.jpg" width="390" height="272" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/29/Map_of_vrp_subproblems.jpg/585px-Map_of_vrp_subproblems.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/2/29/Map_of_vrp_subproblems.jpg 2x" data-file-width="643" data-file-height="449"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="https://en.wikipedia.org/wiki/File:Map_of_vrp_subproblems.jpg" class="internal" title="Enlarge"></a></div>
+A map showing the relationship between common VRP subproblems.</div>
+</div>
+</div>
+<p>Several variations and specializations of the vehicle routing problem exist:</p>
+<ul>
+<li>Vehicle Routing Problem with Pickup and Delivery (VRPPD): A number of goods need to be moved from certain pickup locations to other delivery locations. The goal is to find optimal routes for a fleet of vehicles to visit the pickup and drop-off locations.</li>
+<li>Vehicle Routing Problem with <a href="https://en.wikipedia.org/wiki/LIFO_(computing)" class="mw-redirect" title="LIFO (computing)">LIFO</a>: Similar to the VRPPD, except an additional restriction is placed on the loading of the vehicles: at any delivery location, the item being delivered must be the item most recently picked up. This scheme reduces the loading and unloading times at delivery locations because there is no need to temporarily unload items other than the ones that should be dropped off.</li>
+<li>Vehicle Routing Problem with Time Windows (VRPTW): The delivery locations have time windows within which the deliveries (or visits) must be made.</li>
+<li>Capacitated Vehicle Routing Problem: CVRP or CVRPTW. The vehicles have limited carrying capacity of the goods that must be delivered.</li>
+<li>Vehicle Routing Problem with Multiple Trips (VRPMT): The vehicles can do more than one route.</li>
+<li>Open Vehicle Routing Problem (OVRP): Vehicles are not required to return to the depot.</li>
+</ul>
+<p>Several software vendors have built software products to solve the various VRP problems. Numerous articles are available for more detail on their research and results.</p>
+<p>Although VRP is related to the <a href="https://en.wikipedia.org/wiki/Job_Shop_Scheduling" class="mw-redirect" title="Job Shop Scheduling">Job Shop Scheduling</a> Problem, the two problems are typically solved using different techniques.<sup id="cite_ref-Beck2003_5-0" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-Beck2003-5">[5]</a></sup></p>
+<h2><span class="mw-headline" id="Exact_solution_methods">Exact solution methods</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit&amp;section=3" title="Edit section: Exact solution methods">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>There are three main different approaches to modelling the VRP</p>
+<ol>
+<li><b>Vehicle flow formulations</b>—this uses integer variables associated with each arc that count the number of times that the edge is traversed by a vehicle. It is generally used for basic VRPs. This is good for cases where the solution cost can be expressed as the sum of any costs associated with the arcs. However it can't be used to handle many practical applications.<sup id="cite_ref-toth_2-5" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-toth-2">[2]</a></sup></li>
+<li><b>Commodity flow formulations</b>—additional integer variables are associated with the arcs or edges which represent the flow of commodities along the paths travelled by the vehicles. This has only recently been used to find an exact solution.<sup id="cite_ref-toth_2-6" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-toth-2">[2]</a></sup></li>
+<li><b>Set partitioning problem</b>—These have an exponential number of binary variables which are each associated with a different feasible circuit. The VRP is then instead formulated as a set partitioning problem which asks what is the collection of circuits with minimum cost that satisfy the VRP constraints. This allows for very general route costs.<sup id="cite_ref-toth_2-7" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-toth-2">[2]</a></sup></li>
+</ol>
+<h3><span class="mw-headline" id="Vehicle_flow_formulations">Vehicle flow formulations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit&amp;section=4" title="Edit section: Vehicle flow formulations">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The formulation of the TSP by Dantzig, Fulkerson and Johnson was extended to create the two index vehicle flow formulations for the VRP</p>
+<p><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mtext>min</mtext>
+        </mrow>
+        <munder>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mi>V</mi>
+          </mrow>
+        </munder>
+        <munder>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mi>V</mi>
+          </mrow>
+        </munder>
+        <msub>
+          <mi>c</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mi>j</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\text{min}}\sum _{i\in V}\sum _{j\in V}c_{ij}x_{ij}}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/daa3655a715099fdb8c5d95d471be65974f50b8d" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.505ex; width:17.14ex; height:6.009ex;" alt="{\text{min}}\sum _{i\in V}\sum _{j\in V}c_{ij}x_{ij}"></span></p>
+<p>subject to</p>
+<p><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+            <mtr>
+              <mtd></mtd>
+              <mtd>
+                <mi></mi>
+                <munder>
+                  <mo>∑<!-- ∑ --></mo>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>i</mi>
+                    <mo>∈<!-- ∈ --></mo>
+                    <mi>V</mi>
+                  </mrow>
+                </munder>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>i</mi>
+                    <mi>j</mi>
+                  </mrow>
+                </msub>
+                <mo>=</mo>
+                <mn>1</mn>
+                <mspace width="1em"></mspace>
+                <mi mathvariant="normal">∀<!-- ∀ --></mi>
+                <mi>j</mi>
+                <mo>∈<!-- ∈ --></mo>
+                <mi>V</mi>
+                <mi class="MJX-variant" mathvariant="normal">∖<!-- ∖ --></mi>
+                <mrow>
+                  <mo>{</mo>
+                  <mn>0</mn>
+                  <mo>}</mo>
+                </mrow>
+                <mo>;</mo>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo stretchy="false">(</mo>
+                <mn>1</mn>
+                <mo stretchy="false">)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd></mtd>
+              <mtd>
+                <mi></mi>
+                <munder>
+                  <mo>∑<!-- ∑ --></mo>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>j</mi>
+                    <mo>∈<!-- ∈ --></mo>
+                    <mi>V</mi>
+                  </mrow>
+                </munder>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>i</mi>
+                    <mi>j</mi>
+                  </mrow>
+                </msub>
+                <mo>=</mo>
+                <mn>1</mn>
+                <mspace width="1em"></mspace>
+                <mi mathvariant="normal">∀<!-- ∀ --></mi>
+                <mi>i</mi>
+                <mo>∈<!-- ∈ --></mo>
+                <mi>V</mi>
+                <mi class="MJX-variant" mathvariant="normal">∖<!-- ∖ --></mi>
+                <mrow>
+                  <mo>{</mo>
+                  <mn>0</mn>
+                  <mo>}</mo>
+                </mrow>
+                <mo>;</mo>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo stretchy="false">(</mo>
+                <mn>2</mn>
+                <mo stretchy="false">)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd></mtd>
+              <mtd>
+                <mi></mi>
+                <munder>
+                  <mo>∑<!-- ∑ --></mo>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>i</mi>
+                    <mo>∈<!-- ∈ --></mo>
+                    <mi>V</mi>
+                  </mrow>
+                </munder>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>i</mi>
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo>=</mo>
+                <mi>K</mi>
+                <mo>;</mo>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo stretchy="false">(</mo>
+                <mn>3</mn>
+                <mo stretchy="false">)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd></mtd>
+              <mtd>
+                <mi></mi>
+                <munder>
+                  <mo>∑<!-- ∑ --></mo>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>j</mi>
+                    <mo>∈<!-- ∈ --></mo>
+                    <mi>V</mi>
+                  </mrow>
+                </munder>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                    <mi>j</mi>
+                  </mrow>
+                </msub>
+                <mo>=</mo>
+                <mi>K</mi>
+                <mo>;</mo>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo stretchy="false">(</mo>
+                <mn>4</mn>
+                <mo stretchy="false">)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd></mtd>
+              <mtd>
+                <mi></mi>
+                <munder>
+                  <mo>∑<!-- ∑ --></mo>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>i</mi>
+                    <mo>∉<!-- ∉ --></mo>
+                    <mi>S</mi>
+                  </mrow>
+                </munder>
+                <munder>
+                  <mo>∑<!-- ∑ --></mo>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>j</mi>
+                    <mo>∈<!-- ∈ --></mo>
+                    <mi>S</mi>
+                  </mrow>
+                </munder>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>i</mi>
+                    <mi>j</mi>
+                  </mrow>
+                </msub>
+                <mo>≥<!-- ≥ --></mo>
+                <mi>r</mi>
+                <mo stretchy="false">(</mo>
+                <mi>S</mi>
+                <mo stretchy="false">)</mo>
+                <mspace width="1em"></mspace>
+                <mi mathvariant="normal">∀<!-- ∀ --></mi>
+                <mi>S</mi>
+                <mo>⊆<!-- ⊆ --></mo>
+                <mi>V</mi>
+                <mi class="MJX-variant" mathvariant="normal">∖<!-- ∖ --></mi>
+                <mrow>
+                  <mo>{</mo>
+                  <mn>0</mn>
+                  <mo>}</mo>
+                </mrow>
+                <mo>,</mo>
+                <mi>S</mi>
+                <mo>≠<!-- ≠ --></mo>
+                <mi mathvariant="normal">∅<!-- ∅ --></mi>
+                <mo>;</mo>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo stretchy="false">(</mo>
+                <mn>5</mn>
+                <mo stretchy="false">)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd></mtd>
+              <mtd>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>i</mi>
+                    <mi>j</mi>
+                  </mrow>
+                </msub>
+                <mo>∈<!-- ∈ --></mo>
+                <mo fence="false" stretchy="false">{</mo>
+                <mn>0</mn>
+                <mo>,</mo>
+                <mn>1</mn>
+                <mo fence="false" stretchy="false">}</mo>
+                <mspace width="1em"></mspace>
+                <mi mathvariant="normal">∀<!-- ∀ --></mi>
+                <mi>i</mi>
+                <mo>,</mo>
+                <mi>j</mi>
+                <mo>∈<!-- ∈ --></mo>
+                <mi>V</mi>
+                <mo>.</mo>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo stretchy="false">(</mo>
+                <mn>6</mn>
+                <mo stretchy="false">)</mo>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}&amp;\sum _{i\in V}x_{ij}=1\quad \forall j\in V\backslash \left\{0\right\};&amp;(1)\\&amp;\sum _{j\in V}x_{ij}=1\quad \forall i\in V\backslash \left\{0\right\};&amp;(2)\\&amp;\sum _{i\in V}x_{i0}=K;&amp;(3)\\&amp;\sum _{j\in V}x_{0j}=K;&amp;(4)\\&amp;\sum _{i\notin S}\sum _{j\in S}x_{ij}\geq r(S)\quad \forall S\subseteq V\backslash \left\{0\right\},S\neq \emptyset ;&amp;(5)\\&amp;x_{ij}\in \{0,1\}\quad \forall i,j\in V.&amp;(6)\\\end{aligned}}}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/93b8f0d7813882407d61dbf632c50a737168ec07" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -16.005ex; width:49.633ex; height:33.176ex;" alt="{\displaystyle {\begin{aligned}&amp;\sum _{i\in V}x_{ij}=1\quad \forall j\in V\backslash \left\{0\right\};&amp;(1)\\&amp;\sum _{j\in V}x_{ij}=1\quad \forall i\in V\backslash \left\{0\right\};&amp;(2)\\&amp;\sum _{i\in V}x_{i0}=K;&amp;(3)\\&amp;\sum _{j\in V}x_{0j}=K;&amp;(4)\\&amp;\sum _{i\notin S}\sum _{j\in S}x_{ij}\geq r(S)\quad \forall S\subseteq V\backslash \left\{0\right\},S\neq \emptyset ;&amp;(5)\\&amp;x_{ij}\in \{0,1\}\quad \forall i,j\in V.&amp;(6)\\\end{aligned}}}"></span></p>
+<p>Constraints 1 and 2 state that exactly one arc enters and exactly one leaves each vertex associated with a customer, respectively. Constraints 3 and 4 say that the number of vehicles leaving the depot is the same as the number entering. Constraints 5 are the capacity cut constraints, which impose that the routes must be connected and that the demand on each route must not exceed the vehicle capacity. Finally, constraints 6 are the integrality constraints.<sup id="cite_ref-toth_2-8" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-toth-2">[2]</a></sup></p>
+<p>One arbitrary constraint among the <i>2|V|</i> constraints is actually implied by the remaining <i>2|V|-1</i> ones so it can be removed. Each cut defined by a customer set <i>S</i> is crossed by a number of arcs not smaller than <i>r(s)</i> (minimum number of vehicles needed to serve set <i>S</i>).<sup id="cite_ref-toth_2-9" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-toth-2">[2]</a></sup></p>
+<p>An alternative formulation may be obtained by transforming the capacity cut constraints into generalised subtour elimination constraints (GSECs). <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <munder>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mi>S</mi>
+          </mrow>
+        </munder>
+        <munder>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mi>S</mi>
+          </mrow>
+        </munder>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo>≤<!-- ≤ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mi>S</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>−<!-- − --></mo>
+        <mi>r</mi>
+        <mo stretchy="false">(</mo>
+        <mi>s</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \sum _{i\in S}\sum _{j\in S}x_{ij}\leq |S|-r(s)}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/b2a703a4875d68e74d95aff3ddf8ac682b41d144" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.505ex; width:23.111ex; height:6.009ex;" alt="
+\sum_{i\in S}\sum_{j\in S}x_{ij} \leq |S|-r(s)
+"></span> which imposes that at least <i>r(s)</i> arcs leave each customer set <i>S</i>.<sup id="cite_ref-toth_2-10" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-toth-2">[2]</a></sup></p>
+<p>GCECs and CCCs have an exponential number of constraints so it is practically impossible to solve the linear relaxation. A possible way to solve this is to consider a limited subset of these constraints and add the rest if needed.</p>
+<p>A different method again is to use a family of constraints which have a polynomial cardinality which are known as the MTZ constraints, they were first proposed for the TSP <sup id="cite_ref-mtz_6-0" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-mtz-6">[6]</a></sup> and subsequently extended by Christofides, Mingozzi and Toth.<sup id="cite_ref-christof_7-0" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-christof-7">[7]</a></sup> <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>u</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>−<!-- − --></mo>
+        <msub>
+          <mi>u</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo>+</mo>
+        <mi>C</mi>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>C</mi>
+        <mo>−<!-- − --></mo>
+        <msub>
+          <mi>d</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mi mathvariant="normal">∀<!-- ∀ --></mi>
+        <mi>i</mi>
+        <mo>,</mo>
+        <mi>j</mi>
+        <mo>∈<!-- ∈ --></mo>
+        <mi>V</mi>
+        <mi class="MJX-variant" mathvariant="normal">∖<!-- ∖ --></mi>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>0</mn>
+        <mo fence="false" stretchy="false">}</mo>
+        <mo>,</mo>
+        <mi>i</mi>
+        <mo>≠<!-- ≠ --></mo>
+        <mi>j</mi>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mtext>s.t.&nbsp;</mtext>
+        </mrow>
+        <msub>
+          <mi>d</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>+</mo>
+        <msub>
+          <mi>d</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>C</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle u_{i}-u_{j}+Cx_{ij}\leq C-d_{j}~~~~~~\forall i,j\in V\backslash \{0\},i\neq j~~~~{\text{s.t. }}d_{i}+d_{j}\leq C}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/8814555f3714d62f916778425b930056ff2bf170" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:65.435ex; height:3.009ex;" alt="
+u_i-u_j+Cx_{ij}\leq C-d_j  ~~~~~~\forall i,j \in V\backslash\{0\}, i\neq j~~~~\text{s.t. } d_i +d_j \leq C
+"></span></p>
+<p><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>d</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>≤<!-- ≤ --></mo>
+        <msub>
+          <mi>u</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>C</mi>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mtext>&nbsp;</mtext>
+        <mi mathvariant="normal">∀<!-- ∀ --></mi>
+        <mi>i</mi>
+        <mo>∈<!-- ∈ --></mo>
+        <mi>V</mi>
+        <mi class="MJX-variant" mathvariant="normal">∖<!-- ∖ --></mi>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>0</mn>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle d_{i}\leq u_{i}\leq C~~~~~~\forall i\in V\backslash \{0\}}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/25aa879fdb8117029c34def208bc9408cfeee619" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:27.108ex; height:2.843ex;" alt="
+d_i\leq u_i \leq C ~~~~~~\forall i \in V\backslash \{0\}
+"></span></p>
+<p>where <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>u</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <mtext>&nbsp;</mtext>
+        <mi>i</mi>
+        <mo>∈<!-- ∈ --></mo>
+        <mi>V</mi>
+        <mi class="MJX-variant" mathvariant="normal">∖<!-- ∖ --></mi>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>0</mn>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle u_{i},~i\in V\backslash \{0\}}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/1cecf522e00ca64808c2426aa1e54af77708ac77" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:13.926ex; height:2.843ex;" alt=" u_i,~i \in V \backslash \{0\}"></span> is an additional continuous variable which represents the load of the vehicle after visiting customer <i>i</i> and <i>d_i</i> is the demand of customer <i>i</i>. These impose both the connectivity and the capacity requirements. When <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x_{ij}=0}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/5d55a81f500a692d90f669339d093030e1674fbe" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:7.114ex; height:2.843ex;" alt="x_{{ij}}=0"></span> constraint then <i>i</i> 'is not binding' since <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>u</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>C</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle u_{i}\leq C}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/f63e7db4ea86c797310a5f77ca76f10653815bf3" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:7.033ex; height:2.509ex;" alt="u_i\leq C"></span> and <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>u</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo>≥<!-- ≥ --></mo>
+        <msub>
+          <mi>d</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle u_{j}\geq d_{j}}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/654d6a415d9fd16c92ff4b60dcd6f6a6e5a88a42" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:7.503ex; height:2.843ex;" alt="u_j\geq d_j"></span> whereas <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mn>1</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x_{ij}=1}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/6981a579ea6c367da65acffecbe8445fe70ccba0" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:7.114ex; height:2.843ex;" alt="x_{ij} = 1"></span> they impose that <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>u</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo>≥<!-- ≥ --></mo>
+        <msub>
+          <mi>u</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>+</mo>
+        <msub>
+          <mi>d</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle u_{j}\geq u_{i}+d_{j}}</annotation>
+  </semantics>
+</math></span><img src="./Vehicle Routing Problem_files/d61ed25ddf940f14a62aea513ea98ed873f00781" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:12.501ex; height:2.843ex;" alt="u_j \geq u_i +d_j"></span>.</p>
+<p>These have been used extensively to model the basic VRP (CVRP) and the VRPB. However their power is limited to these simple problems. They can only be used when the cost of the solution can be expressed as the sum of the costs of the arc costs. We cannot also know which vehicle traverses each arc. Hence we cannot use this for more complex models where the cost and or feasibility is dependent on the order of the customers or the vehicles used.<sup id="cite_ref-toth_2-11" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-toth-2">[2]</a></sup></p>
+<h3><span class="mw-headline" id="Manual_vs._Automatic_Optimum_Routing">Manual vs. Automatic Optimum Routing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit&amp;section=5" title="Edit section: Manual vs. Automatic Optimum Routing">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>There are many methods how to solve vehicle routing problem manually. For example, optimum routing is a big efficiency issue for forklifts in large warehouses. Some of the manual methods to decide upon the most efficient route are: Largest gap, S-shape, Aisle-by-aisle, Combined and Combined +. While Combined + method is the most complex, thus the hardest to be used by lift truck operators, it is the most efficient routing method. Still the percentage difference between the manual optimum routing method and the real optimum route was on average 13%.<sup id="cite_ref-8" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-8">[8]</a></sup><sup id="cite_ref-9" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-9">[9]</a></sup></p>
+<p><br></p>
+<h2><span class="mw-headline" id="Free_software_for_solving_VRP">Free software for solving VRP</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit&amp;section=6" title="Edit section: Free software for solving VRP">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="wikitable">
+<tbody><tr>
+<th>Name<br>
+(alphabetically)</th>
+<th>License</th>
+<th>API language</th>
+<th>Brief info</th>
+</tr>
+<tr>
+<td>jsprit</td>
+<td>LGPL</td>
+<td>Java</td>
+<td>lightweight, java based, open source toolkit for solving rich VRPs. <a rel="nofollow" class="external text" href="http://jsprit.github.io/">link</a> An Excel-compatible user interface for jsprit is available with mapping, reporting and route editing functionality. <a rel="nofollow" class="external text" href="http://www.opendoorlogistics.com/new-version-released-vehicle-fleet-scheduling/">link</a> <sup id="cite_ref-balandin_10-0" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-balandin-10">[10]</a></sup></td>
+</tr>
+<tr>
+<td>Open-VRP</td>
+<td><a rel="nofollow" class="external text" href="http://opensource.franz.com/preamble.html">LGPL</a></td>
+<td>Lisp</td>
+<td>Open-VRP for Lisp, hosted on Github. <a rel="nofollow" class="external text" href="https://github.com/mck-/Open-VRP">link</a> <sup id="cite_ref-balandin_10-1" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-balandin-10">[10]</a></sup></td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/OptaPlanner" title="OptaPlanner">OptaPlanner</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Apache_License" title="Apache License">Apache License</a></td>
+<td>Java</td>
+<td>Open Source Java constraint solver (<a rel="nofollow" class="external text" href="http://www.optaplanner.org/">optaplanner.org</a>) with VRP examples. <sup id="cite_ref-balandin_10-2" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-balandin-10">[10]</a></sup></td>
+</tr>
+<tr>
+<td>SYMPHONY</td>
+<td><a href="https://en.wikipedia.org/wiki/Common_Public_License" title="Common Public License">Common Public License</a> 1.0</td>
+<td></td>
+<td>Open-source solver for mixed-integer linear programs (MILPs) with support for VRPs. <a rel="nofollow" class="external text" href="http://projects.coin-or.org/SYMPHONY">link</a> <sup id="cite_ref-balandin_10-3" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-balandin-10">[10]</a></sup></td>
+</tr>
+<tr>
+<td>VRP Spreadsheet Solver</td>
+<td>Creative Commons Attribution 4.0 International License</td>
+<td></td>
+<td>Microsoft Excel and VBA based open source solver, with a link to public GIS for coordinate, driving distance and duration retrieval. <a rel="nofollow" class="external text" href="http://verolog.deis.unibo.it/vrp-spreadsheet-solver">link</a> Video tutorial <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=enCBp2lBn64">link</a> <sup id="cite_ref-balandin_10-4" class="reference"><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_note-balandin-10">[10]</a></sup></td>
+</tr>
+</tbody></table>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit&amp;section=7" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Chinese_postman_problem" class="mw-redirect" title="Chinese postman problem">Chinese postman problem</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem" title="Travelling salesman problem">Travelling salesman problem</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Vehicle_rescheduling_problem" title="Vehicle rescheduling problem">Vehicle rescheduling problem</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit&amp;section=8" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-DantzigRamser1959-1"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-DantzigRamser1959_1-0"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Dantzig, George Bernard; Ramser, John Hubert (October 1959). <a rel="nofollow" class="external text" href="http://andresjaquep.files.wordpress.com/2008/10/2627477-clasico-dantzig.pdf">"The Truck Dispatching Problem"</a> <span style="font-size:85%;">(PDF)</span>. <i>Management Science</i>. <b>6</b> (1): 80–91. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1287%2Fmnsc.6.1.80">10.1287/mnsc.6.1.80</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.atitle=The+Truck+Dispatching+Problem&amp;rft.aufirst=George+Bernard&amp;rft.aulast=Dantzig&amp;rft.au=Ramser%2C+John+Hubert&amp;rft.date=1959-10&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fandresjaquep.files.wordpress.com%2F2008%2F10%2F2627477-clasico-dantzig.pdf&amp;rft_id=info%3Adoi%2F10.1287%2Fmnsc.6.1.80&amp;rft.issue=1&amp;rft.jtitle=Management+Science&amp;rft.pages=80-91&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=6" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-toth-2"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-toth_2-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-toth_2-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-toth_2-2"><sup><i><b>c</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-toth_2-3"><sup><i><b>d</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-toth_2-4"><sup><i><b>e</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-toth_2-5"><sup><i><b>f</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-toth_2-6"><sup><i><b>g</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-toth_2-7"><sup><i><b>h</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-toth_2-8"><sup><i><b>i</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-toth_2-9"><sup><i><b>j</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-toth_2-10"><sup><i><b>k</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-toth_2-11"><sup><i><b>l</b></i></sup></a></span> <span class="reference-text"><cite class="citation book"><i>The vehicle routing problem</i>. Philadelphia: Soc. for Industrial and Applied Mathematics. 2002. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-89871-579-2" title="Special:BookSources/0-89871-579-2">0-89871-579-2</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.btitle=The+vehicle+routing+problem&amp;rft.date=2002&amp;rft.genre=book&amp;rft.isbn=0-89871-579-2&amp;rft.place=Philadelphia&amp;rft.pub=Soc.+for+Industrial+and+Applied+Mathematics&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span> <span style="font-size:100%" class="error citation-comment"><code style="color:inherit; border:inherit; padding:inherit;">|first1=</code> missing <code style="color:inherit; border:inherit; padding:inherit;">|last1=</code> in Authors list (<a href="https://en.wikipedia.org/wiki/Help:CS1_errors#first_missing_last" title="Help:CS1 errors">help</a>)</span></span></li>
+<li id="cite_note-Springer_Verlag-3"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-Springer_Verlag_3-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-Springer_Verlag_3-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation book">editors, Geir Hasle, Knut-Andreas Lie, Ewald Quak,; Kloster, O (2007). <i>Geometric modelling, numerical simulation, and optimization applied mathematics at SINTEF</i> ([Online-Ausg.]. ed.). Berlin: Springer Verlag. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/978-3-540-68783-2" title="Special:BookSources/978-3-540-68783-2">978-3-540-68783-2</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.aufirst=Geir+Hasle%2C+Knut-Andreas+Lie%2C+Ewald+Quak%2C&amp;rft.au=Kloster%2C+O&amp;rft.aulast=editors&amp;rft.btitle=Geometric+modelling%2C+numerical+simulation%2C+and+optimization+applied+mathematics+at+SINTEF&amp;rft.date=2007&amp;rft.edition=%5BOnline-Ausg.%5D.&amp;rft.genre=book&amp;rft.isbn=978-3-540-68783-2&amp;rft.place=Berlin&amp;rft.pub=Springer+Verlag&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-4"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation book">Comtois, Claude; Slack, Brian; Rodrigue, Jean-Paul (2013). <i>The geography of transport systems</i> (Third edition. ed.). London: Routledge, Taylor &amp; Francis Group. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/978-0-415-82254-1" title="Special:BookSources/978-0-415-82254-1">978-0-415-82254-1</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.aufirst=Claude&amp;rft.aulast=Comtois&amp;rft.au=Rodrigue%2C+Jean-Paul&amp;rft.au=Slack%2C+Brian&amp;rft.btitle=The+geography+of+transport+systems&amp;rft.date=2013&amp;rft.edition=Third+edition.&amp;rft.genre=book&amp;rft.isbn=978-0-415-82254-1&amp;rft.place=London&amp;rft.pub=Routledge%2C+Taylor+%26+Francis+Group&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-Beck2003-5"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-Beck2003_5-0"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation conference">Beck, J.C.; Prosser, P.; Selensky, E. (2003). <a rel="nofollow" class="external text" href="http://www.dcs.gla.ac.uk/pras/pubs/Icaps03.pdf">"Vehicle routing and job shop scheduling: What's the difference"</a> <span style="font-size:85%;">(PDF)</span>. <i>Proceedings of the 13th International Conference on Artificial Intelligence Planning and Scheduling</i>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.atitle=Vehicle+routing+and+job+shop+scheduling%3A+What%99s+the+difference&amp;rft.au=Beck%2C+J.C.&amp;rft.au=Prosser%2C+P.&amp;rft.au=Selensky%2C+E.&amp;rft.btitle=Proceedings+of+the+13th+International+Conference+on+Artificial+Intelligence+Planning+and+Scheduling&amp;rft.date=2003&amp;rft.genre=conference&amp;rft_id=http%3A%2F%2Fwww.dcs.gla.ac.uk%2Fpras%2Fpubs%2FIcaps03.pdf&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-mtz-6"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-mtz_6-0"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Miller, C. E.; Tucker, E. W.; Zemlin, R. A. (1960). "Integer Programming Formulations and Travelling Salesman Problems". <i>J. ACM</i>. <b>7</b>: 326–329. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1145%2F321043.321046">10.1145/321043.321046</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.atitle=Integer+Programming+Formulations+and+Travelling+Salesman+Problems&amp;rft.aufirst=C.+E.&amp;rft.aulast=Miller&amp;rft.au=Tucker%2C+E.+W.&amp;rft.au=Zemlin%2C+R.+A.&amp;rft.date=1960&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1145%2F321043.321046&amp;rft.jtitle=J.+ACM&amp;rft.pages=326-329&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=7" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-christof-7"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-christof_7-0"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation book">Christofides, N.; Mingozzi, A.; Toth, P. (1979). <i>The Vehicle Routing Problem</i>. Chichester, UK: Wiley. pp.&nbsp;315–338.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.aufirst=N.&amp;rft.aulast=Christofides&amp;rft.au=Mingozzi%2C+A.&amp;rft.au=Toth%2C+P.&amp;rft.btitle=The+Vehicle+Routing+Problem&amp;rft.date=1979&amp;rft.genre=book&amp;rft.pages=315-338&amp;rft.place=Chichester%2C+UK&amp;rft.pub=Wiley&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-8"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://locatible.com/blog/logistics/why-is-manual-warehouse-optimum-routing-so-unefficient/">"Why Is Manual Warehouse Optimum Routing So Inefficient?"</a>. <i>Locatible.com</i>. 2016-09-26<span class="reference-accessdate">. Retrieved <span class="nowrap">2016-09-26</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.atitle=Why+Is+Manual+Warehouse+Optimum+Routing+So+Inefficient%3F&amp;rft.date=2016-09-26&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Flocatible.com%2Fblog%2Flogistics%2Fwhy-is-manual-warehouse-optimum-routing-so-unefficient%2F&amp;rft.jtitle=Locatible.com&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-9"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation web">Roodbergen, Kees Jan (2001). <a rel="nofollow" class="external text" href="http://roodbergen.com/publications/IJPR2001.pdf">"Routing methods for warehouses with multiple cross aisles"</a> <span style="font-size:85%;">(PDF)</span>. <i>roodbergen.com</i><span class="reference-accessdate">. Retrieved <span class="nowrap">2016-09-26</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.atitle=Routing+methods+for+warehouses+with+multiple+cross+aisles&amp;rft.aufirst=Kees+Jan&amp;rft.aulast=Roodbergen&amp;rft.date=2001&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Froodbergen.com%2Fpublications%2FIJPR2001.pdf&amp;rft.jtitle=roodbergen.com&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&nbsp;</span></span> <span style="font-size:100%" class="error citation-comment">line feed character in <code style="color:inherit; border:inherit; padding:inherit;">|title=</code> at position 31 (<a href="https://en.wikipedia.org/wiki/Help:CS1_errors#invisible_char" title="Help:CS1 errors">help</a>)</span></span></li>
+<li id="cite_note-balandin-10"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-balandin_10-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-balandin_10-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-balandin_10-2"><sup><i><b>c</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-balandin_10-3"><sup><i><b>d</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#cite_ref-balandin_10-4"><sup><i><b>e</b></i></sup></a></span> <span class="reference-text"><cite class="citation book">Editors, Sergey Balandin , Sergey Andreev, Yevgeni Koucheryavy (2015). <i>Waste Management as an IoT-Enabled Service in Smart Cities</i>. Switzerland: Springer International Publishing. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/978-3-319-23126-6" title="Special:BookSources/978-3-319-23126-6">978-3-319-23126-6</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.aufirst=Sergey+Balandin+%2C+Sergey+Andreev%2C+Yevgeni+Koucheryavy&amp;rft.aulast=Editors&amp;rft.btitle=Waste+Management+as+an+IoT-Enabled+Service+in+Smart+Cities&amp;rft.date=2015&amp;rft.genre=book&amp;rft.isbn=978-3-319-23126-6&amp;rft.place=Switzerland&amp;rft.pub=Springer+International+Publishing&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="Further_reading">Further reading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit&amp;section=9" title="Edit section: Further reading">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><cite class="citation journal">Oliveira, H.C.B.de; Vasconcelos, G.C. (2008). <a rel="nofollow" class="external text" href="http://www.springerlink.com/content/f863257kn036x1rp/">"A hybrid search method for the vehicle routing problem with time windows"</a>. <i>Annals of Operations Research</i>. <b>180</b>: 125–144. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1007%2Fs10479-008-0487-y">10.1007/s10479-008-0487-y</a><span class="reference-accessdate">. Retrieved <span class="nowrap">2009-01-29</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.atitle=A+hybrid+search+method+for+the+vehicle+routing+problem+with+time+windows&amp;rft.au=Oliveira%2C+H.C.B.de&amp;rft.au=Vasconcelos%2C+G.C.&amp;rft.date=2008&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.springerlink.com%2Fcontent%2Ff863257kn036x1rp%2F&amp;rft_id=info%3Adoi%2F10.1007%2Fs10479-008-0487-y&amp;rft.jtitle=Annals+of+Operations+Research&amp;rft.pages=125-144&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=180" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite class="citation conference">Frazzoli, E.; Bullo, F. (2004). <a rel="nofollow" class="external text" href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1429220">"Decentralized algorithms for vehicle routing in a stochastic time-varying environment"</a>. <i>Decision and Control, 2004. CDC. 43rd IEEE Conference on</i>. <b>4</b>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.atitle=Decentralized+algorithms+for+vehicle+routing+in+a+stochastic+time-varying+environment&amp;rft.au=Bullo%2C+F.&amp;rft.au=Frazzoli%2C+E.&amp;rft.btitle=Decision+and+Control%2C+2004.+CDC.+43rd+IEEE+Conference+on&amp;rft.date=2004&amp;rft.genre=conference&amp;rft_id=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1429220&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite class="citation journal">Psaraftis, H.N. (1988). "Dynamic vehicle routing problems". <i>Vehicle Routing: Methods and Studies</i>. <b>16</b>: 223–248.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.atitle=Dynamic+vehicle+routing+problems&amp;rft.au=Psaraftis%2C+H.N.&amp;rft.date=1988&amp;rft.genre=article&amp;rft.jtitle=Vehicle+Routing%3A+Methods+and+Studies&amp;rft.pages=223-248&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=16" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite class="citation journal">Bertsimas, D.J.; Van Ryzin, G. (1991). "A Stochastic and Dynamic Vehicle Routing Problem in the Euclidean Plane". <i>Operations Research</i>. <b>39</b> (4): 601–615. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1287%2Fopre.39.4.601">10.1287/opre.39.4.601</a>. <a href="https://en.wikipedia.org/wiki/JSTOR" title="JSTOR">JSTOR</a>&nbsp;<a rel="nofollow" class="external text" href="https://www.jstor.org/stable/171167">171167</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.atitle=A+Stochastic+and+Dynamic+Vehicle+Routing+Problem+in+the+Euclidean+Plane&amp;rft.au=Bertsimas%2C+D.J.&amp;rft.au=Van+Ryzin%2C+G.&amp;rft.date=1991&amp;rft.genre=article&amp;rft_id=%2F%2Fwww.jstor.org%2Fstable%2F171167&amp;rft_id=info%3Adoi%2F10.1287%2Fopre.39.4.601&amp;rft.issue=4&amp;rft.jtitle=Operations+Research&amp;rft.pages=601-615&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=39" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite class="citation book">Toth, P.; Vigo, D. (2001). <i>The Vehicle Routing Problem</i>. Philadelphia: Siam. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-89871-579-2" title="Special:BookSources/0-89871-579-2">0-89871-579-2</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AVehicle+routing+problem&amp;rft.au=Toth%2C+P.&amp;rft.au=Vigo%2C+D.&amp;rft.btitle=The+Vehicle+Routing+Problem&amp;rft.date=2001&amp;rft.genre=book&amp;rft.isbn=0-89871-579-2&amp;rft.place=Philadelphia&amp;rft.pub=Siam&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+</ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit&amp;section=10" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://neo.lcc.uma.es/vrp">The VRP Web - Extensive information, test instances and various VRP variants</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.orms-today.org/surveys/Vehicle_Routing/vrss.html">Vehicle Routing Software Survey - an INFORMS review</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.dna-evolutions.com/dnaappletsample.html">Demo applet of a genetic algorithm solving TSPs and VRPTW problems</a></li>
+<li><a rel="nofollow" class="external text" href="http://gpexplorer.ddns.net/example-vrp.html">Demo of a genetic algorithm solving VRP initialized with Clark &amp; Wright savings heuristic</a></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:7799668-0!*!0!!en!4!*!math=5 and timestamp 20161116171700 and revision id 741301514
+ -->
+<noscript>&lt;img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /&gt;</noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;oldid=741301514">https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;oldid=741301514</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="https://en.wikipedia.org/wiki/Category:NP-complete_problems" title="Category:NP-complete problems">NP-complete problems</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Operations_research" title="Category:Operations research">Operations research</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="https://en.wikipedia.org/wiki/Category:CS1_errors:_missing_author_or_editor" title="Category:CS1 errors: missing author or editor">CS1 errors: missing author or editor</a></li><li><a href="https://en.wikipedia.org/wiki/Category:CS1_errors:_invisible_characters" title="Category:CS1 errors: invisible characters">CS1 errors: invisible characters</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="https://en.wikipedia.org/wiki/Special:MyTalk" title="Discussion about edits from this IP address [alt-shift-n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="https://en.wikipedia.org/wiki/Special:MyContributions" title="A list of edits made from this IP address [alt-shift-y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&amp;returnto=Vehicle+routing+problem" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Vehicle+routing+problem" title="You&#39;re encouraged to log in; however, it&#39;s not mandatory. [alt-shift-o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem" title="View the content page [alt-shift-c]" accesskey="c">Article</a></span></li>
+															<li id="ca-talk"><span><a href="https://en.wikipedia.org/wiki/Talk:Vehicle_routing_problem" title="Discussion about the content page [alt-shift-t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0">
+							<span>Variants</span><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#" tabindex="-1"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem">Read</a></span></li>
+															<li id="ca-edit"><span><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=edit" title="Edit this page [alt-shift-e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label" tabindex="0"><span>More</span><a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://en.wikipedia.org/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search Wikipedia" title="Search Wikipedia [alt-shift-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"><input type="hidden" value="Special:Search" name="title"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton">							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="https://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="https://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="https://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="https://en.wikipedia.org/wiki/Special:Random" title="Load a random article [alt-shift-x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="https://shop.wikimedia.org/" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-interaction" aria-labelledby="p-interaction-label">
+			<h3 id="p-interaction-label">Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="https://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="https://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="https://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://en.wikipedia.org/wiki/Special:WhatLinksHere/Vehicle_routing_problem" title="List of all English Wikipedia pages containing links to this page [alt-shift-j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Vehicle_routing_problem" rel="nofollow" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;oldid=741301514" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q944041" title="Link to connected data repository item [alt-shift-g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Vehicle_routing_problem&amp;id=741301514" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+			<h3 id="p-coll-print_export-label">Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Vehicle+routing+problem">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Vehicle+routing+problem&amp;returnto=Vehicle+routing+problem&amp;oldid=741301514&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="https://en.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;printable=yes" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label"><span class="uls-settings-trigger" title="Language settings" tabindex="0" role="button" aria-haspopup="true"></span>
+			<h3 id="p-lang-label">Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-de"><a href="https://de.wikipedia.org/wiki/Tourenplanung" title="Tourenplanung – German" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-es"><a href="https://es.wikipedia.org/wiki/Problema_de_enrutamiento_de_veh%C3%ADculos" title="Problema de enrutamiento de vehículos – Spanish" lang="es" hreflang="es" class="interlanguage-link-target">Español</a></li><li class="interlanguage-link interwiki-fr"><a href="https://fr.wikipedia.org/wiki/Probl%C3%A8me_de_tourn%C3%A9es_de_v%C3%A9hicules" title="Problème de tournées de véhicules – French" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-it"><a href="https://it.wikipedia.org/wiki/Vehicle_routing_problem" title="Vehicle routing problem – Italian" lang="it" hreflang="it" class="interlanguage-link-target">Italiano</a></li><li class="interlanguage-link interwiki-pl"><a href="https://pl.wikipedia.org/wiki/Problem_marszrutyzacji" title="Problem marszrutyzacji – Polish" lang="pl" hreflang="pl" class="interlanguage-link-target">Polski</a></li><li class="interlanguage-link interwiki-pt"><a href="https://pt.wikipedia.org/wiki/Problema_de_roteamento_de_ve%C3%ADculos" title="Problema de roteamento de veículos – Portuguese" lang="pt" hreflang="pt" class="interlanguage-link-target">Português</a></li><li class="interlanguage-link interwiki-sr"><a href="https://sr.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC_%D1%80%D1%83%D1%82%D0%B8%D1%80%D0%B0%D1%9A%D0%B0_%D0%B2%D0%BE%D0%B7%D0%B8%D0%BB%D0%B0" title="Проблем рутирања возила – Serbian" lang="sr" hreflang="sr" class="interlanguage-link-target">Српски / srpski</a></li><li class="interlanguage-link interwiki-tr"><a href="https://tr.wikipedia.org/wiki/Ara%C3%A7_rotalama_problemi" title="Araç rotalama problemi – Turkish" lang="tr" hreflang="tr" class="interlanguage-link-target">Türkçe</a></li>					</ul>
+				<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Q944041#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 26 September 2016, at 16:53.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="https://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="https://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="https://en.m.wikipedia.org/w/index.php?title=Vehicle_routing_problem&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="./Vehicle Routing Problem_files/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="./Vehicle Routing Problem_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["ext.cite.a11y","ext.math.scripts","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.centralNotice.geoIP","ext.centralNotice.startUp"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":67,"wgHostname":"mw1264"});});</script>
+	
+
+<div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

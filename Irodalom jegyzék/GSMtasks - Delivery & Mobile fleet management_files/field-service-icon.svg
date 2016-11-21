@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="28px" height="31px" viewBox="0 0 28 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.1 (28215) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Landing---Uus" transform="translate(-618.000000, -806.000000)" stroke="#555A65" stroke-width="1.2">
+            <g id="group">
+                <g id="clients" transform="translate(0.000000, 780.000000)">
+                    <g id="field" transform="translate(618.000000, 20.000000)">
+                        <g id="Group" transform="translate(0.000000, 6.000000)">
+                            <polygon id="Stroke-4355" points="5.72727273 30.3541667 1.90909091 30.3541667 1.90909091 27.7708333 5.72727273 27.7708333"></polygon>
+                            <polygon id="Stroke-4356" points="23.5454545 30.3541667 19.7272727 30.3541667 19.7272727 27.7708333 23.5454545 27.7708333"></polygon>
+                            <polygon id="Stroke-4357" points="24.8181818 27.7708333 24.8181818 22.6041667 22.2727273 20.0208333 3.18181818 20.0208333 0.636363636 22.6041667 0.636363636 27.7708333"></polygon>
+                            <polyline id="Stroke-4358" points="11.1127745 13.5625 5.72727273 13.5625 3.18181818 20.0208333 22.2727273 20.0208333"></polyline>
+                            <path d="M0.636363636,23 L6.36363636,23" id="Stroke-4359"></path>
+                            <path d="M19.0909091,23 L24.8181818,23" id="Stroke-4360"></path>
+                            <polygon id="Stroke-4361" points="27.3636364 17.4375 13.3636364 17.4375 13.3636364 0.645833333 27.3636364 0.645833333"></polygon>
+                            <polygon id="Stroke-4362" points="24.8181818 3.22916667 15.9090909 3.22916667 15.9090909 14.8541667 24.8181818 14.8541667"></polygon>
+                            <polyline id="Stroke-4363" points="18.5073636 6.94138829 19.4619091 8.39451329 22.2720909 5.86413829"></polyline>
+                            <polyline id="Stroke-4364" points="18.5073636 10.7906086 19.4619091 12.2424419 22.2720909 9.71335856"></polyline>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

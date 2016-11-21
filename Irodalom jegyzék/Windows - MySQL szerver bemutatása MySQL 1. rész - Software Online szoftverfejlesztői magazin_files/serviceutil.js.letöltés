@@ -1,0 +1,33 @@
+﻿var errorMessage = 'Rendszerünkben programhiba történt!\nA hibáról a rendszer értesítést küldött az üzemeltető részére.\nA hiba javításáig szíves türelmét kérjük, megértését előre is köszönjük!';
+
+function onEnterTextBox(evt, frm) {
+  var keyCode = null;
+  if (evt.which) {
+    keyCode = evt.which;
+  }
+  else {
+    if (evt.keyCode) {
+      keyCode = evt.keyCode;
+    }
+  }
+  if (13 == keyCode) {
+    __doPostBack(frm, '');
+    return false;
+  }
+  return true;
+}
+jQuery.fn.tbHint = function () {
+  $(this).each(function (i) {
+    $(this).val($(this).attr('title')).addClass('hint');
+  });
+  return $(this).focus(function () {
+    if ($(this).val() == $(this).attr('title'))
+      $(this).val('').removeClass('hint');
+  }).blur(function () {
+    if ($(this).val() == '')
+      $(this).val($(this).attr('title')).addClass('hint');
+  });
+};
+
+
+

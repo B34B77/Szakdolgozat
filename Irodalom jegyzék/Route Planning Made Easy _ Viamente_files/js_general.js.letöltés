@@ -1,0 +1,143 @@
+$(document).ready(function(e) {
+
+  $("#overlay_map").overlay({ color: '#ffffff', top: 200, mask: "#FFFFFF", closeOnClick: true });
+
+  function debounce(func, wait) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        func.apply(context, args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  };
+
+  function ajaxValidate(el) {
+    $(el).removeClass().addClass('fieldChecking');
+    $.ajax({
+      type: "POST",
+      url: '/wp-content/themes/via/signup.php',
+      data: "action=validate&what="+el.name+"&value="+encodeURIComponent(el.value),
+      dataType: "json",
+      success: function(response){
+        if (response.result == 'OK') {
+          $(el).removeClass().addClass('fieldOk');
+          $(el).attr('msg', '');
+          var ttel = $('.tooltipError');
+          if (ttel.attr('for') == $(el).attr('name')) {
+            ttel.hide();
+          }
+        } else {
+          var msg = response.errorDescription ? response.errorDescription : '';
+          $(el).attr('msg', msg);
+          $(el).removeClass().addClass('fieldError');
+          if ($(el).is(":focus")) {
+            showErrorTip($(el));
+          }
+        }
+        updateSubmitErrorMsg(false);
+      },
+      error: function(){
+        // TODO: retry later?
+      }
+    });
+  }
+
+  var lazyValidators = {};
+  function lazyValidate(event) {
+    //var code = event ? (event.keyCode || event.which) : 0;
+    //if (code == 9 || code == 16 || code == 18 || code == 27 || (code >= 37 && code <= 40) ) return; // skip tab, arrow keys, shift, esc
+    var lazyValidator = lazyValidators[this.name];
+    if (!lazyValidator) {
+      lazyValidator = lazyValidators[this.name] = {
+         lastValue: null
+        //,fn: debounce(ajaxValidate, 500)
+        ,fn: ajaxValidate
+      }
+    }
+    if (lazyValidator.lastValue !== this.value) {
+      $(this).removeClass().addClass('fieldChecking');
+      lazyValidator.fn(this);
+      lazyValidator.lastValue = this.value;
+    }
+  }
+
+  $('#free_reg :input[type=text]').bind('blur', lazyValidate);
+  $('#free_reg :input[type=password]').bind('blur', lazyValidate);
+  $('#free_reg select').bind('keyup onchange click', lazyValidate);
+
+  function showErrorTip(inputEl) {
+    var msg = inputEl.attr('msg');
+    var el = $('.tooltipError');
+    if (msg && msg != "") {
+      var offset = inputEl.offset();
+      el.html(msg);
+      el.css({top: offset.top + inputEl.height() - 10, left: offset.left});
+      el.attr('for', inputEl.attr('name'));
+      //el.show();
+    } else {
+      el.hide();
+    }
+  }
+
+  function updateSubmitErrorMsg(markEmptyAsErrors) {
+    // perform a basic check on all field values (must not be empty, must not have failed asynch validation)
+    var ok = true;
+    var hasErrors = 0;
+    var hasEmpty = 0;
+    $('#free_reg :input').each(function(idx, el) {
+      if (el.name == 'timezoneOffsetMin' ) return;
+      if (el.name == 'campaign' ) return;
+      el = $(el);
+      if (el.attr('class') == 'fieldError') {
+        hasErrors++;
+      }
+      if (el.val() == '') {
+        hasEmpty++;
+        if (markEmptyAsErrors) el.removeClass().addClass('fieldError');
+      }
+    });
+    var el = $("#submitCreate");
+    if (hasEmpty) {
+      ok = false;
+      el.attr('msg', "Please fill in all fields");
+    } else if (hasErrors) {
+      ok = false;
+      el.attr('msg', "Some fields have errors, please correct them first");
+    } else {
+      el.attr('msg', "");
+    }
+    return ok;
+  }
+
+  // $('#free_reg :input').bind({
+  //   blur: function(){
+  //     $('.tooltipError').hide();
+  //   },
+  //   focus: function(){
+  //     showErrorTip($(this));
+  //   },
+  //   mouseenter: function(){
+  //     showErrorTip($(this));
+  //   },
+  //   mouseleave: function(){
+  //     $('.tooltipError').hide();
+  //   }
+  // });
+
+
+  $('#free_reg').submit(function(){
+    try { $('#free_reg :input[name=timezoneOffsetMin]').val(new Date().getTimezoneOffset()); } catch (ignore) {}
+    var ok = updateSubmitErrorMsg(true);
+    showErrorTip($("#submitCreate"));
+    //disable submit button and show "wait" mask
+    $("#waitmask").css("visibility", (ok ? "visible" : "hidden"));
+    return ok;
+  });
+
+});
+
+if (navigator.appVersion.indexOf("Win")!=-1) $('head').append('<link rel="stylesheet" href="/wp-content/themes/via/chrome.css" type="text/css" />');

@@ -1,0 +1,35 @@
+
+<!-- saved from url=(0056)https://people.maths.bris.ac.uk/~mb13434/git/miagit.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+
+<link href="./Git gyorstalpaló_files/main.css" rel="stylesheet" type="text/css">
+<title> Git gyorstalpaló </title></head>
+<body bgcolor="FFFACD">
+<h1><p align="center">Git gyorstalpaló</p></h1>
+<p class="null">
+ <span class="nonu"><a href="https://people.maths.bris.ac.uk/~mb13434/git/index.html">&#8744;</a></span> <b>Mi is az a Git?</b><br>
+</p>
+<p class="egy">
+ A Git egy verziókezelő, arra szolgál, hogy fileok (programok, dokumentációk, stb) különböző verzióit kordában tartsa, elkönyvelje, tárolja és megossza. Verziókezelőkről és a Gitről egy-egy videó <a href="http://www.youtube.com/watch?v=MLLkJ2rngk0" target="_blank">itt</a> és <a href="http://www.youtube.com/watch?v=dDJOb2wGLjY" target="_blank">itt</a>. Röviden összefoglalva a Git annyit csinál, hogy amikor azt mondjuk neki (<i>commit</i>), akkor egy directoryról csinál magának egy helyi adatbázist a <i>.git</i> nevű könyvtárba. Ezekkel az adatbázisokkal<br>
+<br>
+- nyomon tudja követni, hogy mikor hogyan változott a könyvtárunk,<br>
+- vissza tudja állítani bármelyik korábbi (<i>commit</i>-olt) állapotát a könyvtárnak,<br>
+- szinkronizálni tud egy másik gépen levő hasonló könyvtárral, közben intelligensen átvezeti a változásokat, illetve jelez, ha nem megy neki.<br>
+<br>
+A Gitnek megvan az a további előnye, hogy mindezt tudja titkosított csatornán (ssh-n keresztül) csinálni, ezt fogjuk mi használni ebben a leírásban.<br>
+<br>
+A szemléletbeli különbség ahhoz képest ahogy eddig éltünk az, hogy a dolgaink nem akkor vannak elmentve ha megnyomtuk az editorban a save gombot, hanem csak akkor, ha a git adatbázisunkba is bekerültek (<i>commit</i>). A dolgok tehát röviden a következőképp fognak kinézni, mindent részletesen leírok majd alább: frissítjük a helyi adatbázisunkat a központi <i>Szerver</i> nevű gépéről (arra az esetre gondolva, ha valaki más továbbírta azóta, hogy láttuk; <i>pull</i>). Ezután dolgozunk a filejainkon. Ha eljutottunk egy olyan állapotba amit érdemes menteni, akkor megmondjuk melyik filet vegye figyelembe (<i>add</i>, vagy <i>stage</i>), majd mentjük az adatbázisba (<i>commit</i>). Végül pedig feltöltjük a módosított adatbázist a <i>Szerver</i>-re (<i>push</i>).<br>
+<br>
+Bár az alábbiak elvileg egy alapfokú használatra elegek lesznek, Gitről további olvasnivaló <a href="http://hu.wikipedia.org/wiki/Git" target="_blank">itt</a>, részletesebb tutorial <a href="http://book.git-scm.com/index.html" target="_blank">itt</a>.
+</p>
+<p class="null">
+ <br>
+ <span class="nonu"><a href="https://people.maths.bris.ac.uk/~mb13434/git/telep.html">&gt; <b>Telepítés</b></a></span><br>
+ <br>
+ <span class="nonu"><a href="https://people.maths.bris.ac.uk/~mb13434/git/hasznal.html">&gt; <b>Használat (alapok)</b></a></span><br>
+ <br>
+ <span class="nonu"><a href="https://people.maths.bris.ac.uk/~mb13434/git/gitosis.html">&gt; <b>Központi ssh repository telepítése</b></a></span> (elsősorban az ssh Git <i>Szerver</i> üzemeltetőjének szól)<br>
+</p>
+
+
+</body></html>

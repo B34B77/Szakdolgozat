@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="21px" height="23px" viewBox="0 0 21 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>google play</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing---Uus" transform="translate(-753.000000, -3828.000000)" fill="#9B29FF">
+            <g id="Group-2">
+                <g id="download" transform="translate(0.000000, 3558.000000)">
+                    <g id="Group-5" transform="translate(470.000000, 98.000000)">
+                        <g id="Google-Play---hover" transform="translate(256.000000, 159.000000)">
+                            <path d="M28.3319406,35.6642063 C27.9303007,35.5568592 27.6688742,35.1611921 27.6688742,34.5489151 L27.6688742,14.3385521 C27.6688742,13.7714903 27.8902278,13.3890485 28.2411161,13.25 L28.2411161,13.25 L38.2504658,24.5129481 L28.3319406,35.6642063 L28.3319406,35.6642063 Z M29.7097995,35.2352051 L41.7578977,28.4596604 L38.8234121,25.1576518 L29.7097995,35.2352051 L29.7097995,35.2352051 Z M41.840862,20.4763162 L29.960667,13.7936432 L38.8407838,23.8492618 L41.840862,20.4763162 L41.840862,20.4763162 Z M42.6469236,20.9297302 L47.3009298,23.5476335 C48.1821101,24.0433021 48.1901686,24.8423145 47.3009298,25.3423999 L42.5291817,28.0259099 L39.4167883,24.5015146 L42.6469236,20.9297302 L42.6469236,20.9297302 Z" id="google-play"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
